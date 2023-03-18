@@ -1,0 +1,78 @@
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Bitter:700);
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+$black:         #1a1a1a;
+$gray:          #808080;
+$green:         #99BB00;
+$orange:        #FFAA00;
+$red:           #cc0000;
+$white:         #ffffff;
+
+* { @include box-sizing(border-box); }
+body {
+  font-family: 'Bitter', Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 4em;
+  text-align: right;
+}
+a {
+  color: $black;
+  margin-left: 20px;
+  position: relative;
+  text-decoration: none;
+}
+
+.availability {
+  color: $white;
+  margin-right: 1em;
+  position: absolute;
+  right: 100px;
+  top: 8px;
+  width: 200px;
+  @include transition(all,300ms);
+}
+.button {
+  border: 3px $red solid;
+  bottom: 2px;
+  color: $red;
+  display: inline-block;
+  font-weight: bold;
+  height: 44px;
+  overflow: hidden;
+  padding: 0.5em 1.5em 0.5em 0;
+  position: relative;
+  text-align: right;
+  text-decoration: none;
+  vertical-align: middle;
+  width: 117px;
+  @include border-radius(100px);
+  @include transition(all,300ms);
+  &:hover {
+    border-color: $red;
+    color: $red;
+    width: 340px;
+    .availability {
+      color: $red;
+      display: inline-block;
+    }
+  }
+  &:active {
+    background: darken($red,5%);
+    border-color: darken($red,5%);
+  }
+}
+.hire-me {
+  position: absolute;
+  right: 24px;
+  top: 8px;
+}
